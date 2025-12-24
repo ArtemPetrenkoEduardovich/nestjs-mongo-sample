@@ -7,7 +7,12 @@ import { Group, GroupSchema } from './group.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Group.name, schema: GroupSchema }]),
+    MongooseModule.forFeature([
+      {
+        name: Group.name,
+        schema: GroupSchema,
+      },
+    ]),
   ],
   controllers: [GroupController],
   providers: [GroupService, GroupRepository],

@@ -8,10 +8,15 @@ import { GroupModule } from 'src/group/group.module';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Student.name, schema: StudentSchema }]),
+    MongooseModule.forFeature([
+      {
+        name: Student.name,
+        schema: StudentSchema,
+      },
+    ]),
     GroupModule,
   ],
   providers: [StudentService, StudentRepository],
-  controllers: [StudentController]
+  controllers: [StudentController],
 })
 export class StudentModule {}
